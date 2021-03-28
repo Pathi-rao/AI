@@ -1,2 +1,2 @@
 # Aritificial Intelligence
- This repo contains all the exercise files and projects related to AI
+ This repo contains workbook and exercise files related to Data Science and AI
