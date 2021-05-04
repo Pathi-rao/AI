@@ -5,35 +5,93 @@
 ### ❓ Missing values
 
 1. What is the missing datatype used in pandas?
+A. pandas primarily uses NaN to represent missing data
+
 2. How to replace all occurences of the value 9999 to missing in pandas?
+A. df.replace('9999', np.NaN)
+
 3. How to get the absolute number of missings for each variable in pandas?
+A. df.isnull().sum()
+df.isna().sum().sum()
+
 4. How to get the percentage of missings for each variable in pandas?
+A. df.isnull().sum() * 100 / len(df)
+
 5. How to drop rows with missing values?
+A. df.dropna()
+df.dropna( axis=0, how='any')
+
 6. How to drop variables with missing values?
+A. df.dropna(axis = 1)
+
 7. What is the univariate imputation method in sklearn?
+A. SimpleImputer(missing_values=np.nan, strategy='mean')
+
 8. What is the multivariate imputation method in sklearn?
+A. IterativeImputer(random_state=0)
+
 9. What is the best univariate imputation method to categorical variables? (Explain why)
+A. 
+
 10. What is the best univariate imputation method to numerical variables? (Explain why)
+A.  Develop an Inutition --> Univariate or multivariate Imputation OR use XGBoost and LightBGM
 
 
 ### 🔎 Outliers
 
 1. What is an outlier?
+A. outlier is an observation that lies an abnormal distance from other values in a random sample from a population.
+
 2. What is a simple method to detect and deal with outliers of a numerical variable?
+A  Univariate method --> One of the simplest methods for detecting outliers is the use of box plots. A box plot is a graphical display    for describing the distribution of the data. 
+Box plots use the median and the lower and upper quartiles.
+
 3. What is novelty detection?
+A. Novelty detection is the identification of new or unknown data or signals that a machine learning system is not aware of during training. Novelty detection methods try to identify outliers that differ from the distribution of ordinary data.
+
 4. Name 4 advanced methods of outlier detection in sklearn.
+A. Isolation Forest, or iForest for short, is a tree-based anomaly detection algorithm.
+It is based on modeling the normal data in such a way as to isolate anomalies that are both few in number and different in the feature space.
+
+B) The Minimum Covariance Determinant (MCD) method is a highly robust estimator of multivariate location and scatter, for which a fast algorithm is available.
+It also serves as a convenient and efficient tool for outlier detection
+
+C) Local Outlier Factor-A simple approach to identifying outliers is to locate those examples that are far from the other examples in the feature space.
+
+D) One-Class SVM - is a classification algorithm, it can be used to discover outliers in input data for both regression and classification datasets.
+
 
 
 ### 🖋 Typos
 
 1. What is a typo?
+A. A typo is a mistake in written or published writing. Checking of spelling is a basic requirement in any text processing or analysis. 
+The python package pyspellchecker provides us this feature to find the words that may have been mis-spelled and also suggest the possible corrections.
+
 2. What is a good method of automatically detect typos?
+A. pyspellchecker - uses Levenshtein Distance algorithm to find permutations within an edit distance of 2 from the original word. 
+It then compares all permutations (insertions, deletions, replacements, and transpositions) to known words in a word frequency list. 
+Those words that are found more often in the frequency list are more likely the correct results.
 
 
 
 ### Practical case
 
 Consider the following dataset: [San Francisco Building Permits](https://www.kaggle.com/aparnashastry/building-permit-applications-data). Look at the columns "Street Number Suffix" and "Zipcode". Both of these contain missing values.
+
+
++++++++++++  We drop Street Number Suffix   +++++++++++++++++++++++
+
+San Francisco has two numbered series: streets, which run generally east–west, and avenues, which are north–south. The two series do not meet.
+
+The numbered streets begin with 1st Street in SoMa and end with 30th Street in Noe Valley. Some of these streets are only nominally east–west, which causes anomalies such as 3rd Street meeting 26th Street in the Dogpatch.
+
+The numbered avenues are in the Richmond and Sunset Districts beginning with 2nd Avenue and continuing westward to 48th Avenue, which runs parallel to the Pacific Ocean shore.
+
+We donot have any suffix for the street number --> They don't exist and hence we can drop the column
+
+
+
 
 - Which, if either, are missing because they don't exist?
 - Which, if either, are missing because they weren't recorded?
