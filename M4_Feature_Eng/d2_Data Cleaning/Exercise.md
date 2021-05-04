@@ -12,7 +12,7 @@ A. df.replace('9999', np.NaN)
 
 3. How to get the absolute number of missings for each variable in pandas?
 A. df.isnull().sum()
-df.isna().sum().sum()
+df.isna().sum()
 
 4. How to get the percentage of missings for each variable in pandas?
 A. df.isnull().sum() * 100 / len(df)
