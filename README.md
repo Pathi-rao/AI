@@ -1,2 +1,2 @@
 # Aritificial Intelligence
- This repo contains workbook and exercise files related to Data Science and AI
+ This repo contains all the work that I have done related to AI at StriveSchool
