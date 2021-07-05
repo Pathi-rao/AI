@@ -74,6 +74,7 @@ h1{
 
  .social-links{
      width:100%;
+     margin-left:6%;
  
  }
 .social-links a {
@@ -130,4 +131,13 @@ h1{
 
 th,td{
     color:var(--main-text-light);
+}
+
+/* new styling */
+.image_container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50% !important;
+    object-fit: cover;
+   
 }
