@@ -1,12 +1,12 @@
 Preprocessing Pipeline.
 
-- Hi, This is a Sample Sentence --> tokenize
+- Is anyone there? --> tokenize
                     |
-- ["Hi", ",", "This", "is", "a", "Sample", "Sentence"] --> lower + stem
+- ["Is", "anyone", "there", "?"] --> lower + stem
                     |
-- []                                                   --> exclude punctuation characters
+- ["Is", "anyon", "there", "?"]  --> exclude punctuation characters
                     |
-- []                                                   --> bag of words
+- ["Is", "anyon", "there"]       --> bag of words
                     |
-        vector     []
+-         [0,0,0,1,0,1,0,1]      --> vector
 
